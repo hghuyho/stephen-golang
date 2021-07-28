@@ -5,5 +5,6 @@ func main() {
 	// fmt.Println([]byte(cards.toString()))
 	//cards.saveToFile("my_cards")
 	cards := newDecFromFile("my_card")
+	cards.shuffle()
 	cards.print()
 }
