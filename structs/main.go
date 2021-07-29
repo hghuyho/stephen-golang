@@ -22,8 +22,8 @@ func main() {
 			zipCode: 700000,
 		},
 	}
-	huyPointer := &huy
-	huyPointer.updateName("Mia")
+	// huyPointer := &huy
+	huy.updateName("Mia")
 	huy.print()
 }
 
