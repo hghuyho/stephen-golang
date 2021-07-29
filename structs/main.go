@@ -14,13 +14,6 @@ type person struct {
 }
 
 func main() {
-	// huy := person{lastName: "Huy", firstName: "HO"}
-	// huy = person{lastName: "Huy", firstName: "HOO"}
-
-	// var huy person
-	// huy.firstName = "Huy"
-	// huy.lastName = "HO"
-
 	huy := person{
 		firstName: "Huy",
 		lastName:  "HO",
@@ -29,8 +22,14 @@ func main() {
 			zipCode: 700000,
 		},
 	}
+	huy.updateName("Mia")
+	huy.print()
+}
 
-	fmt.Println(huy)
-	fmt.Printf("%+v", huy)
+func (p person) updateName(newFirstName string) {
+	p.firstName = newFirstName
+}
 
+func (p person) print() {
+	fmt.Printf("%+v", p)
 }
