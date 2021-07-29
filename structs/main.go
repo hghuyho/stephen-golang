@@ -22,12 +22,13 @@ func main() {
 			zipCode: 700000,
 		},
 	}
-	huy.updateName("Mia")
+	huyPointer := &huy
+	huyPointer.updateName("Mia")
 	huy.print()
 }
 
-func (p person) updateName(newFirstName string) {
-	p.firstName = newFirstName
+func (pointerToPersion *person) updateName(newFirstName string) {
+	(*pointerToPersion).firstName = newFirstName
 }
 
 func (p person) print() {
