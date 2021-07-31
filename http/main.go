@@ -2,9 +2,12 @@ package main
 
 import (
 	"fmt"
+	"io"
 	"net/http"
 	"os"
 )
+
+type LogWriter struct{}
 
 func main() {
 	resp, err := http.Get("http://google.com")
@@ -12,8 +15,13 @@ func main() {
 		fmt.Println("Error:", err)
 		os.Exit(1)
 	}
-	//fmt.Println(resp)
-	bs := make([]byte, 100000)
-	resp.Body.Read(bs)
+	//io.Copy(os.Stdout, resp.Body)
+	lw := LogWriter{}
+	io.Copy(lw, resp.Body)
+}
+// This func is now implementing Writer interface and associating it with LogWriter
+func (LogWriter) Write(bs []byte) (int, error) {
 	fmt.Println(string(bs))
+	fmt.Println("Just wrote this many bytes:", len(bs))
+	return len(bs), nil
 }
