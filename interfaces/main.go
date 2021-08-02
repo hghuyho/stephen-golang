@@ -8,8 +8,8 @@ type bot interface {
 	getGreeting() string
 }
 
-type englishBot struct {}
-type spanishBot struct {}
+type englishBot struct{}
+type spanishBot struct{}
 
 func main() {
 	eb := englishBot{}
@@ -20,7 +20,7 @@ func main() {
 
 }
 
-func printGreeting(b bot)  {
+func printGreeting(b bot) {
 	fmt.Println(b.getGreeting())
 }
 

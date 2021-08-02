@@ -19,9 +19,10 @@ func main() {
 	lw := LogWriter{}
 	io.Copy(lw, resp.Body)
 }
+
 // This func is now implementing Writer interface and associating it with LogWriter
 func (LogWriter) Write(bs []byte) (int, error) {
 	fmt.Println(string(bs))
-	fmt.Println("Just wrote this many bytes:", len(bs))
+	fmt.Println("Just wrote thiss many bytes:", len(bs))
 	return len(bs), nil
 }
