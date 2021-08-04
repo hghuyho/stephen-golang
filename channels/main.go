@@ -18,6 +18,11 @@ func main() {
 		go checkLink(link, c)
 	}
 	fmt.Println(<-c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
+	fmt.Println(<-c)
 	//time.Sleep(1000 * time.Millisecond)
 }
 
