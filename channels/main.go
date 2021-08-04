@@ -22,7 +22,6 @@ func main() {
 	fmt.Println(<-c)
 	fmt.Println(<-c)
 	fmt.Println(<-c)
-	fmt.Println(<-c)
 	//time.Sleep(1000 * time.Millisecond)
 }
 
